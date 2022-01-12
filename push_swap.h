@@ -6,7 +6,7 @@
 /*   By: ccambium <ccambium@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 12:13:40 by ccambium          #+#    #+#             */
-/*   Updated: 2022/01/12 13:42:15 by ccambium         ###   ########.fr       */
+/*   Updated: 2022/01/12 14:10:51 by ccambium         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 
 typedef	t_stack;
+struct	s_stack;
 
 t_stack	push_sa(t_stack stack);
 t_stack	push_sb(t_stack stack);
