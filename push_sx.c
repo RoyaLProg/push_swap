@@ -6,11 +6,11 @@
 /*   By: ccambium <ccambium@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 14:09:04 by ccambium          #+#    #+#             */
-/*   Updated: 2022/01/12 11:53:26 by ccambium         ###   ########.fr       */
+/*   Updated: 2022/01/12 12:11:00 by ccambium         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static int	*push_sx(t_stack stack)
+static t_stack	push_sx(t_stack stack)
 {
 	int		temp;
 	int		*tab;
@@ -26,13 +26,13 @@ static int	*push_sx(t_stack stack)
 	return (stack);
 }
 
-int	*push_sa(t_stack stack)
+t_stack	push_sa(t_stack stack)
 {
 	write(1, "sa\n");
 	return (push_sx(stack));
 }
 
-int	*push_sb(t_stack stack)
+t_stack	push_sb(t_stack stack)
 {
 	write(1, "sb\n");
 	return (push_sx(stack));
