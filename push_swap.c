@@ -6,9 +6,11 @@
 /*   By: ccambium <ccambium@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 10:52:29 by ccambium          #+#    #+#             */
-/*   Updated: 2022/01/11 10:52:42 by ccambium         ###   ########.fr       */
+/*   Updated: 2022/01/12 13:44:03 by ccambium         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap.h"
 
 void	push_swap(int *stackA, int *stackB)
 {

@@ -6,9 +6,11 @@
 /*   By: ccambium <ccambium@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 14:09:04 by ccambium          #+#    #+#             */
-/*   Updated: 2022/01/12 12:11:00 by ccambium         ###   ########.fr       */
+/*   Updated: 2022/01/12 13:44:07 by ccambium         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap.h"
 
 static t_stack	push_sx(t_stack stack)
 {
@@ -28,19 +30,19 @@ static t_stack	push_sx(t_stack stack)
 
 t_stack	push_sa(t_stack stack)
 {
-	write(1, "sa\n");
+	write(1, "sa\n", 3);
 	return (push_sx(stack));
 }
 
 t_stack	push_sb(t_stack stack)
 {
-	write(1, "sb\n");
+	write(1, "sb\n", 3);
 	return (push_sx(stack));
 }
 
 void	push_ss(t_stack stackA, t_stack stackB)
 {
-	write(1, "ss\n");
+	write(1, "ss\n", 3);
 	stackA = push_sx(stackA);
 	stackB = push_sx(stackB);
 	return ;
