@@ -6,7 +6,7 @@
 /*   By: ccambium <ccambium@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 10:21:33 by ccambium          #+#    #+#             */
-/*   Updated: 2022/01/10 11:40:46 by ccambium         ###   ########.fr       */
+/*   Updated: 2022/01/17 07:51:12 by ccambium         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,11 @@ static int	min_max(char **argv, int argc)
 		i++;
 	}
 	return (0);
+}
+
+static int	not_twice(char **argv, int argc)
+{
+	return (1);
 }
 
 int	verification(char **argv, int argc)

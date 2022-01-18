@@ -6,9 +6,11 @@
 /*   By: ccambium <ccambium@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 11:36:43 by ccambium          #+#    #+#             */
-/*   Updated: 2022/01/12 11:53:07 by ccambium         ###   ########.fr       */
+/*   Updated: 2022/01/12 16:56:56 by ccambium         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap.h"
 
 typedef struct s_stack{
 	size_t	size;

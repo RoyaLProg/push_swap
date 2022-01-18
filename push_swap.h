@@ -6,7 +6,7 @@
 /*   By: ccambium <ccambium@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 12:13:40 by ccambium          #+#    #+#             */
-/*   Updated: 2022/01/12 14:10:51 by ccambium         ###   ########.fr       */
+/*   Updated: 2022/01/12 16:57:34 by ccambium         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-typedef	t_stack;
-struct	s_stack;
+typedef struct s_stack{
+	size_t	size;
+	int		*tab;
+}	t_stack;
 
 t_stack	push_sa(t_stack stack);
 t_stack	push_sb(t_stack stack);
