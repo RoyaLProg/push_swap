@@ -6,7 +6,7 @@
 /*   By: ccambium <ccambium@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 14:17:35 by ccambium          #+#    #+#             */
-/*   Updated: 2022/01/18 08:32:35 by ccambium         ###   ########.fr       */
+/*   Updated: 2022/04/08 01:51:26 by ccambium         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,11 @@ static t_stack	*push_px(t_stack *stack_dst, t_stack *stack_src)
 t_stack	*push_pa(t_stack *stacka, t_stack *stackb)
 {
 	write(1, "pa\n", 3);
-	return (push_px(&stackb, &stacka));
+	return (push_px(stackb, stacka));
 }
 
 t_stack	*push_pb(t_stack *stacka, t_stack *stackb)
 {
 	write(1, "pb\n", 3);
-	return (push_px(&stacka, &stackb));
+	return (push_px(stacka, stackb));
 }
