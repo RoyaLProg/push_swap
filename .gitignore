@@ -1,2 +1,6 @@
-
 a.out
+.vscode
+Makefile
+linux_checker
+*.o
+push_swap
