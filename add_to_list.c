@@ -6,7 +6,7 @@
 /*   By: ccambium <ccambium@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 23:58:06 by ccambium          #+#    #+#             */
-/*   Updated: 2022/04/08 01:35:17 by ccambium         ###   ########.fr       */
+/*   Updated: 2022/04/26 16:04:51 by ccambium         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	add_to_list(t_stack *a, int ac, char **av)
 {
-	size_t	i;
+	int	i;
 
 	a->size = ac - 1;
 	a->tab = (int *)malloc(sizeof(int) * ac);

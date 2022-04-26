@@ -6,7 +6,7 @@
 /*   By: ccambium <ccambium@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 10:52:29 by ccambium          #+#    #+#             */
-/*   Updated: 2022/04/09 13:40:30 by ccambium         ###   ########.fr       */
+/*   Updated: 2022/04/26 16:05:48 by ccambium         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,12 @@
 
 void	push_swap(t_stack *stackA, t_stack *stackB)
 {
-	size_t	i;
-
-	i = 0;
-	case_less100(stackA, stackB);
-	while (i < stackA->size)
-	{
-		printf("%d, ", stackA->tab[i]);
-		i++;
-	}
+	if (stackA->size == 2)
+		case2(stackA);
+	else if (stackA->size == 3)
+		case3(stackA, stackB);
+	else
+		return ;
 	free(stackA->tab);
 }
 
