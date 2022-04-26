@@ -6,7 +6,7 @@
 /*   By: ccambium <ccambium@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 10:21:33 by ccambium          #+#    #+#             */
-/*   Updated: 2022/04/08 02:13:15 by ccambium         ###   ########.fr       */
+/*   Updated: 2022/04/26 14:56:33 by ccambium         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,21 @@ static int	min_max(char **argv, int argc)
 	long int	x;
 	int			i;
 
-	i = 0;
+	i = 1;
 	while (i < argc)
 	{
+		x = ft_strlen(argv[i]);
+		if (x > 10)
+			return (1);
+		if (x == 10)
+		{
+			if (ft_atoi(argv[i][0]) == '-')
+				if (ft_atoi(argv[i][1]) > '2')
+					return (1);
+			else
+				if (ft_atoi(argv[i][0]) > '2')
+					return (1);
+		}
 		x = ft_atol(argv[i]);
 		if (x > 2147483647 || x < -2147483648)
 			return (1);
