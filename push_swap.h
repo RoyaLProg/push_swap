@@ -6,7 +6,7 @@
 /*   By: ccambium <ccambium@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 12:13:40 by ccambium          #+#    #+#             */
-/*   Updated: 2022/04/26 16:32:33 by ccambium         ###   ########.fr       */
+/*   Updated: 2022/04/28 11:47:58 by ccambium         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,6 @@ int				is_sorted(t_stack *stackA, t_stack *stackB);
 void			case2(t_stack *stackA);
 void			case3(t_stack *stackA, t_stack *stackB);
 size_t			ft_strlen(const char *s);
+void			case4to45(t_stack *stackA, t_stack *stackB);
 
 #endif
