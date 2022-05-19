@@ -6,7 +6,7 @@
 /*   By: ccambium <ccambium@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 11:36:43 by ccambium          #+#    #+#             */
-/*   Updated: 2022/04/29 14:26:51 by ccambium         ###   ########.fr       */
+/*   Updated: 2022/05/12 12:46:41 by ccambium         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,13 @@ void	case4to45(t_stack *stackA, t_stack *stackB)
 {
 	if (is_sorted(stackA, stackB))
 		return ;
-	while (stackA->size > 1 || !stack_is_sorted(stackA))
-	{dd
+	while (stackA->size > 1 && !stack_is_sorted(stackA))
+	{
+		if (stackA->size == 2 && !stack_is_sorted(stackA))
+		{
+			push_sa(stackA);
+			continue ;
+		}
 		move_to_top(stackA);
 		push_pb(stackA, stackB);
 	}

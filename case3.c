@@ -6,7 +6,7 @@
 /*   By: ccambium <ccambium@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 14:48:53 by ccambium          #+#    #+#             */
-/*   Updated: 2022/04/26 16:45:19 by ccambium         ###   ########.fr       */
+/*   Updated: 2022/05/02 14:00:39 by ccambium         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,3 @@ void	case3(t_stack *stackA, t_stack *stackB)
 		push_sa(stackA);
 	}
 }
-

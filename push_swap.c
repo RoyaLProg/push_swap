@@ -6,7 +6,7 @@
 /*   By: ccambium <ccambium@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 10:52:29 by ccambium          #+#    #+#             */
-/*   Updated: 2022/04/28 13:06:43 by ccambium         ###   ########.fr       */
+/*   Updated: 2022/05/12 12:51:38 by ccambium         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ void	push_swap(t_stack *stackA, t_stack *stackB)
 	else if (stackA->size < 46)
 		case4to45(stackA, stackB);
 	free(stackA->tab);
+	if (stackB->tab != NULL)
+		free(stackB->tab);
 }
 
 int	main(int ac, char **av)
@@ -29,6 +31,8 @@ int	main(int ac, char **av)
 	t_stack	stacka;
 	t_stack	stackb;
 
+	stacka.tab = NULL;
+	stackb.tab = NULL;
 	stacka.size = 0;
 	stackb.size = 0;
 	if (ac == 1)
