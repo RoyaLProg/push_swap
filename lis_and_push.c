@@ -6,11 +6,34 @@
 /*   By: ccambium <ccambium@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 21:07:44 by ccambium          #+#    #+#             */
-/*   Updated: 2022/05/21 04:46:05 by ccambium         ###   ########.fr       */
+/*   Updated: 2022/05/21 05:17:18 by ccambium         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+
+static size_t	pushtotop(size_t k, size_t offset,
+t_stack *stackA, t_stack *stackB)
+{
+	size_t	i;
+	size_t	j;
+
+	return (offset);
+}
+
+static void	push_to_b(int *lis, size_t k, t_stack *stackA, t_stack *stackB)
+{
+	size_t	i;
+	size_t	j;
+	size_t	offset;
+	int		max;
+
+	offset = 0;
+	i = -1;
+	max = stackA->tab[k];
+	offset = pushtotop(k, offset, stackA, stackB);
+}
 
 void	lis_and_push(t_stack *stackA, t_stack *stackB)
 {
@@ -37,22 +60,4 @@ void	lis_and_push(t_stack *stackA, t_stack *stackB)
 	while (++i < stackA->size)
 		if (lis[i] > k)
 			k = i;
-}
-
-void	pushToTop(int k, int *lis)
-{
-	
-}
-
-void	push_to_b(int *lis, size_t k, t_stack *stackA, t_stack *stackB)
-{
-	size_t	i;
-	size_t	j;
-	int		max;
-	int		offset;
-
-	offset = 0;
-	i = -1;
-	max = stackA->tab[k];
-	pushToTop();
 }
