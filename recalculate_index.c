@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   caseover45.c                                       :+:      :+:    :+:   */
+/*   recalculate_index.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccambium <ccambium@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/21 04:46:30 by ccambium          #+#    #+#             */
-/*   Updated: 2022/05/25 01:46:04 by ccambium         ###   ########.fr       */
+/*   Created: 2022/05/25 04:35:11 by ccambium          #+#    #+#             */
+/*   Updated: 2022/05/25 04:41:01 by ccambium         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	caseover45(t_stack *stackA, t_stack *stackB)
+long int	recalculate_index(long int index, long int offset, size_t size)
 {
-	if (is_sorted(stackA, stackB))
-		return ;
-	lis_and_push(stackA, stackB);
+	index += offset;
+	if (index < 0)
+		index = size - 1 + index;
+	else if ((size_t)index >= size)
+		index -= size;
+	return (index);
 }

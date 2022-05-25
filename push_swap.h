@@ -6,7 +6,7 @@
 /*   By: ccambium <ccambium@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 12:13:40 by ccambium          #+#    #+#             */
-/*   Updated: 2022/05/19 23:57:57 by ccambium         ###   ########.fr       */
+/*   Updated: 2022/05/25 04:41:13 by ccambium         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,10 @@ size_t			ft_strlen(const char *s);
 void			case4to45(t_stack *stackA, t_stack *stackB);
 int				ft_max(int x, int y);
 int				ft_min(int x, int y);
+void			caseover45(t_stack *stackA, t_stack *stackB);
+void			lis_and_push(t_stack *stackA, t_stack *stackB);
+int				*create_lis(size_t	size);
+long int		recalculate_index(long int index, long int offset,
+					size_t size);
 
 #endif

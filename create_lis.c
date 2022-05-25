@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   caseover45.c                                       :+:      :+:    :+:   */
+/*   create_lis.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccambium <ccambium@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/21 04:46:30 by ccambium          #+#    #+#             */
-/*   Updated: 2022/05/25 01:46:04 by ccambium         ###   ########.fr       */
+/*   Created: 2022/05/25 04:29:13 by ccambium          #+#    #+#             */
+/*   Updated: 2022/05/25 04:40:46 by ccambium         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	caseover45(t_stack *stackA, t_stack *stackB)
+int	*create_lis(size_t	size)
 {
-	if (is_sorted(stackA, stackB))
-		return ;
-	lis_and_push(stackA, stackB);
+	int		*lis;
+	size_t	i;
+
+	lis = malloc(sizeof(int) * size);
+	if (lis == NULL)
+		return (lis);
+	i = -1;
+	while (++i < size)
+		lis[i] = 1;
+	return (lis);
 }
