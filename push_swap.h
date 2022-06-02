@@ -6,7 +6,7 @@
 /*   By: ccambium <ccambium@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 12:13:40 by ccambium          #+#    #+#             */
-/*   Updated: 2022/05/25 04:41:13 by ccambium         ###   ########.fr       */
+/*   Updated: 2022/06/02 10:54:20 by ccambium         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ int				ft_min(int x, int y);
 void			caseover45(t_stack *stackA, t_stack *stackB);
 void			lis_and_push(t_stack *stackA, t_stack *stackB);
 int				*create_lis(size_t	size);
+void			optimize_cost(int *cost);
 long int		recalculate_index(long int index, long int offset,
 					size_t size);
 
