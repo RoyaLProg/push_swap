@@ -6,23 +6,22 @@
 /*   By: ccambium <ccambium@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 10:52:29 by ccambium          #+#    #+#             */
-/*   Updated: 2022/05/25 02:00:00 by ccambium         ###   ########.fr       */
+/*   Updated: 2022/06/05 15:51:07 by ccambium         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 void	push_swap(t_stack *stackA, t_stack *stackB)
 {
-	// if (stackA->size == 2)
-	// 	case2(stackA);
-	// else if (stackA->size == 3)
-	// 	case3(stackA, stackB);
-	// else if (stackA->size < 46)
-	// 	case4to45(stackA, stackB);
-	// else
-	caseover45(stackA, stackB);
+	if (stackA->size == 2)
+		case2(stackA);
+	else if (stackA->size == 3)
+		case3(stackA, stackB);
+	else if (stackA->size < 46)
+		case4to45(stackA, stackB);
+	else
+		caseover45(stackA, stackB);
 	free(stackA->tab);
 	if (stackB->tab != NULL)
 		free(stackB->tab);

@@ -6,7 +6,7 @@
 /*   By: ccambium <ccambium@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 12:13:40 by ccambium          #+#    #+#             */
-/*   Updated: 2022/06/02 10:54:20 by ccambium         ###   ########.fr       */
+/*   Updated: 2022/06/05 14:24:48 by ccambium         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,8 @@ int				*create_lis(size_t	size);
 void			optimize_cost(int *cost);
 long int		recalculate_index(long int index, long int offset,
 					size_t size);
+size_t			get_lower_cost_index(int **cost_tab, size_t size);
+int				**get_cost_tab(t_stack *stackA, t_stack *stackB);
+void			free_tab(int **tab);
 
 #endif

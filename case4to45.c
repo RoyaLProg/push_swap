@@ -6,12 +6,11 @@
 /*   By: ccambium <ccambium@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 11:36:43 by ccambium          #+#    #+#             */
-/*   Updated: 2022/05/12 12:46:41 by ccambium         ###   ########.fr       */
+/*   Updated: 2022/06/05 15:51:36 by ccambium         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "stdio.h"
 
 static size_t	index_of_min(t_stack *stack)
 {

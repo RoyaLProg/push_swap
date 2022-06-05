@@ -6,13 +6,13 @@
 /*   By: ccambium <ccambium@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 11:49:08 by ccambium          #+#    #+#             */
-/*   Updated: 2022/06/02 10:55:39 by ccambium         ###   ########.fr       */
+/*   Updated: 2022/06/05 14:50:03 by ccambium         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	free_tab(char **tab)
+void	free_tab(int **tab)
 {
 	size_t	i;
 
@@ -30,37 +30,46 @@ static void	free_tab(char **tab)
 	Le tableau suivant est constitué de chaque coup a effectuer dans la stack A 
 	pour le deplacer à la bonne position dans la stack B
 
-	! ne pas oubliez de rajouter + 1
+	! ne pas oubliez de rajouter + 1 (meme si useless)
 	* COST CALCULATION
 
 	* @param size : taille de la stack A
 */
-static int	**create_cost_tab(size_t size)
+
+void	init_tab(int **tab, size_t size)
 {
-	int		**v;
 	size_t	i;
 	size_t	j;
 
 	i = -1;
-	v = (int **)malloc(sizeof(int *) * size);
+	while (++i < size)
+	{
+		j = -1;
+		while (++j < 6)
+			tab[i][j] = 0;
+	}
+}
+
+static int	**create_cost_tab(size_t size)
+{
+	int		**v;
+	size_t	i;
+
+	i = -1;
+	v = (int **)malloc(sizeof(int *) * (size + 1));
 	if (v == NULL)
 		return (v);
 	while (++i < size)
 	{
-		v[i] = (int *)malloc(sizeof(int) * 6);
+		v[i] = (int *)malloc(sizeof(int) * 6 + 1);
 		if (v[i] == NULL)
 		{
 			free_tab(v);
 			return (NULL);
 		}
 	}
-	i = -1;
-	while (++i < size)
-	{
-		j = -1;
-		while (++j < 6)
-			v[i][j] = 0;
-	}
+	init_tab(v, size);
+	v[size] = NULL;
 	return (v);
 }
 
@@ -68,7 +77,6 @@ static int	*calculate_cost(t_stack *stackA, t_stack *stackB,
 						size_t x, int *cost)
 {
 	size_t	i;
-	size_t	j;
 	size_t	n;
 
 	if (x >= stackA->size / 2)
@@ -102,8 +110,6 @@ int	**get_cost_tab(t_stack *stackA, t_stack *stackB)
 		return (NULL);
 	i = -1;
 	while (++i < stackA->size)
-	{
-		cost_tab[i] = calculate_cost(stackA, stackB, i, 0);
-	}
+		cost_tab[i] = calculate_cost(stackA, stackB, i, cost_tab[i]);
 	return (cost_tab);
 }

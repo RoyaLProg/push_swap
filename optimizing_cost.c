@@ -6,9 +6,11 @@
 /*   By: ccambium <ccambium@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 10:52:19 by ccambium          #+#    #+#             */
-/*   Updated: 2022/06/02 10:53:29 by ccambium         ###   ########.fr       */
+/*   Updated: 2022/06/05 14:30:17 by ccambium         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap.h"
 
 void	optimize_cost(int *cost)
 {

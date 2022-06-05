@@ -6,12 +6,11 @@
 /*   By: ccambium <ccambium@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 21:07:44 by ccambium          #+#    #+#             */
-/*   Updated: 2022/05/25 04:40:34 by ccambium         ###   ########.fr       */
+/*   Updated: 2022/06/05 15:51:40 by ccambium         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 static void	copy_stack(t_stack *stackA, t_stack *dup)
 {
