@@ -6,7 +6,7 @@
 /*   By: ccambium <ccambium@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 11:49:08 by ccambium          #+#    #+#             */
-/*   Updated: 2022/06/05 14:50:03 by ccambium         ###   ########.fr       */
+/*   Updated: 2022/06/06 12:10:59 by ccambium         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,6 @@ void	free_tab(int **tab)
 	free(tab);
 }
 
-/*
-	* ra rb rr rra rrb rrr
-	Le tableau suivant est constitué de chaque coup a effectuer dans la stack A 
-	pour le deplacer à la bonne position dans la stack B
-
-	! ne pas oubliez de rajouter + 1 (meme si useless)
-	* COST CALCULATION
-
-	* @param size : taille de la stack A
-*/
 
 void	init_tab(int **tab, size_t size)
 {
@@ -49,6 +39,17 @@ void	init_tab(int **tab, size_t size)
 			tab[i][j] = 0;
 	}
 }
+
+/*
+	* ra rb rr rra rrb rrr
+	Le tableau suivant est constitué de chaque coup a effectuer dans la stack A 
+	pour le deplacer à la bonne position dans la stack B
+
+	! ne pas oubliez de rajouter + 1 (meme si useless)
+	* COST CALCULATION
+
+	* @param size : taille de la stack A
+*/
 
 static int	**create_cost_tab(size_t size)
 {
@@ -84,11 +85,14 @@ static int	*calculate_cost(t_stack *stackA, t_stack *stackB,
 	else
 		cost[0] += x;
 	return (cost);
-	while (++i < stackA->size)
+	i = -1;
+	n = 5;
+	while (++i < stackB->size)
 	{
-		if (stackA->tab[i] < stackB->tab[x])
+		if (stackB->tab[i] > stackA->tab[x] && stackB->tab[i + 1] < stackA->tab[x])
 		{
-			n = i;
+			n = i - 1;
+			printf("[n = %d]\n", n);
 			break ;
 		}
 	}

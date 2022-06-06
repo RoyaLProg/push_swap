@@ -6,7 +6,7 @@
 /*   By: ccambium <ccambium@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 10:52:29 by ccambium          #+#    #+#             */
-/*   Updated: 2022/06/05 15:51:07 by ccambium         ###   ########.fr       */
+/*   Updated: 2022/06/06 11:03:11 by ccambium         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ void	push_swap(t_stack *stackA, t_stack *stackB)
 		case4to45(stackA, stackB);
 	else
 		caseover45(stackA, stackB);
-	free(stackA->tab);
+	if (stackA->tab != NULL)
+		free(stackA->tab);
 	if (stackB->tab != NULL)
 		free(stackB->tab);
 }

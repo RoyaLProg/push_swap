@@ -6,7 +6,7 @@
 /*   By: ccambium <ccambium@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 13:27:37 by ccambium          #+#    #+#             */
-/*   Updated: 2022/06/05 13:39:40 by ccambium         ###   ########.fr       */
+/*   Updated: 2022/06/06 11:56:06 by ccambium         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ size_t	get_cost(int *cost)
 	size_t	v;
 
 	i = -1;
+	v = 0;
 	while (++i < 6)
 		v += cost[i];
 	return (v);
