@@ -6,7 +6,7 @@
 /*   By: ccambium <ccambium@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 04:46:30 by ccambium          #+#    #+#             */
-/*   Updated: 2022/06/06 11:53:08 by ccambium         ###   ########.fr       */
+/*   Updated: 2022/06/07 17:04:58 by ccambium         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	caseover45(t_stack *stackA, t_stack *stackB)
 
 	if (is_sorted(stackA, stackB))
 		return ;
-	//lis_and_push(stackA, stackB);
+	lis_and_push(stackA, stackB);
 	while (stackA->size > 0)
 	{
 		cost_tab = get_cost_tab(stackA, stackB);
@@ -76,7 +76,7 @@ void	caseover45(t_stack *stackA, t_stack *stackB)
 	}
 	while (stackB->size > 0)
 		push_pa(stackA, stackB);
-	//move_to_top(stackA);
+	move_to_top(stackA);
 	x = -1;
 	while (++x < stackA->size)
 		printf("%d\n", stackA->tab[x]);

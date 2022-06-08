@@ -6,7 +6,7 @@
 /*   By: ccambium <ccambium@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 12:13:40 by ccambium          #+#    #+#             */
-/*   Updated: 2022/06/06 12:05:19 by ccambium         ###   ########.fr       */
+/*   Updated: 2022/06/08 16:58:34 by ccambium         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,8 @@ long int		recalculate_index(long int index, long int offset,
 size_t			get_lower_cost_index(int **cost_tab, size_t size);
 int				**get_cost_tab(t_stack *stackA, t_stack *stackB);
 void			free_tab(int **tab);
+size_t			get_cost(int *cost);
+void			get_b_movement(int *cost, int x, t_stack *stackA,
+					t_stack *stackB);
 
 #endif
