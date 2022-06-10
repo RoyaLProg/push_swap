@@ -15,11 +15,12 @@ SRC = push_swap.c\
 	ft_calloc.c\
 	ft_isdigit.c\
 	ft_strlen.c\
-	get_b_movements.c\
+	get_a_movements.c\
 	get_lower_cost_index.c\
 	is_sorted.c\
 	lis_and_push.c\
 	min_max.c\
+	my_ternarie.c\
 	optimizing_cost.c\
 	push_px.c\
 	push_rrx.c\
@@ -30,7 +31,7 @@ SRC = push_swap.c\
 OBJ = $(SRC:.c=.o)
 
 $(NAME): $(OBJ)
-	$(CC) $(OBJ) -o $(NAME)
+	$(CC) $(OBJ) -o $(NAME) -fsanitize=address -g3
 
 all: $(NAME)
 

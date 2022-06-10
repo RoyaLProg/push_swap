@@ -6,14 +6,13 @@
 /*   By: ccambium <ccambium@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 04:46:30 by ccambium          #+#    #+#             */
-/*   Updated: 2022/06/07 17:04:58 by ccambium         ###   ########.fr       */
+/*   Updated: 2022/06/10 09:12:05 by ccambium         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
-// * ra rb rr rra rrb rrr
 
+// * ra rb rr rra rrb rrr
 void	proceed_push_cost(int *cost, t_stack *stackA, t_stack *stackB)
 {
 	while (cost[0]-- > 0)
@@ -28,7 +27,7 @@ void	proceed_push_cost(int *cost, t_stack *stackA, t_stack *stackB)
 		push_rrb(stackB);
 	while (cost[5]-- > 0)
 		push_rrr(stackA, stackB);
-	push_pb(stackA, stackB);
+	push_pa(stackA, stackB);
 }
 
 static size_t	index_of_min(t_stack *stack)
@@ -67,17 +66,12 @@ void	caseover45(t_stack *stackA, t_stack *stackB)
 	if (is_sorted(stackA, stackB))
 		return ;
 	lis_and_push(stackA, stackB);
-	while (stackA->size > 0)
+	while (stackB->size > 0)
 	{
 		cost_tab = get_cost_tab(stackA, stackB);
-		x = get_lower_cost_index(cost_tab, stackA->size);
+		x = get_lower_cost_index(cost_tab, stackB->size);
 		proceed_push_cost(cost_tab[x], stackA, stackB);
 		free_tab(cost_tab);
 	}
-	while (stackB->size > 0)
-		push_pa(stackA, stackB);
 	move_to_top(stackA);
-	x = -1;
-	while (++x < stackA->size)
-		printf("%d\n", stackA->tab[x]);
 }
