@@ -6,7 +6,7 @@
 /*   By: ccambium <ccambium@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 10:21:33 by ccambium          #+#    #+#             */
-/*   Updated: 2022/04/26 16:34:13 by ccambium         ###   ########.fr       */
+/*   Updated: 2022/06/13 08:32:28 by ccambium         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,21 @@ static int	is_all_int(char **argv)
 	size_t	i;
 	size_t	j;
 
-	i = 0;
+	i = 1;
 	while (argv[i])
 	{
 		j = 0;
 		while (argv[i][j])
 		{
 			if (!ft_isdigit(argv[i][j]))
-				return (0);
+			{
+				if (j == 0 && argv[i][j] == '-')
+				{
+					j++;
+					continue ;
+				}
+				return (1);
+			}
 			j++;
 		}
 		i++;
@@ -41,19 +48,14 @@ static int	min_max(char **argv, int argc)
 	while (++i < argc)
 	{
 		x = ft_strlen(argv[i]);
-		if (x > 10)
+		if (x > 11)
 			return (1);
+		if (x == 11)
+			if (argv[i][0] != '-' || argv[i][1] > '2' || argv[i][2] > '1')
+				return (1);
 		if (x == 10)
-		{
-			if (argv[i][0] == '-')
-			{
-				if (argv[i][1] > '2')
-					return (1);
-			}
-			else
-				if (argv[i][0] > '2')
-					return (1);
-		}
+			if (argv[i][0] > '2' || argv[i][1] > '1')
+				return (1);
 		x = ft_atol(argv[i]);
 		if (x > 2147483647 || x < -2147483648)
 			return (1);
@@ -87,7 +89,8 @@ int	verification(char **argv, int argc)
 		return (0);
 	if (min_max(argv, argc))
 		return (0);
-	if (not_twice(argv, argc))
-		return (0);
+	if (argc > 2)
+		if (not_twice(argv, argc))
+			return (0);
 	return (1);
 }

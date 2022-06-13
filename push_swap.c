@@ -6,7 +6,7 @@
 /*   By: ccambium <ccambium@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 10:52:29 by ccambium          #+#    #+#             */
-/*   Updated: 2022/06/06 11:03:11 by ccambium         ###   ########.fr       */
+/*   Updated: 2022/06/13 06:53:09 by ccambium         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	main(int ac, char **av)
 	stacka.size = 0;
 	stackb.size = 0;
 	if (ac == 1)
-		return (write(1, "\n", 1));
+		return (1);
 	if (!verification(av, ac))
 		return (write(1, "Error\n", 6));
 	add_to_list(&stacka, ac, av);

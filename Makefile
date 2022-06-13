@@ -44,5 +44,3 @@ clean:
 	rm -f $(OBJ)
 
 re : fclean all
-
-.PHONY: all clean fclean re $(NAME)
