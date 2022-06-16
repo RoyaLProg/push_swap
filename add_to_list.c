@@ -6,7 +6,7 @@
 /*   By: ccambium <ccambium@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 23:58:06 by ccambium          #+#    #+#             */
-/*   Updated: 2022/06/16 08:31:24 by ccambium         ###   ########.fr       */
+/*   Updated: 2022/06/16 08:36:30 by ccambium         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	add_to_list(t_stack *a, int ac, char **av)
 	a->size = ac - 1;
 	a->tab = (int *)malloc(sizeof(int) * ac - 1);
 	if (a->tab == NULL)
-		return (NULL);
+		return ;
 	i = 0;
 	while (i < ac - 1)
 	{
