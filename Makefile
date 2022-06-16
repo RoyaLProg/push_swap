@@ -30,7 +30,30 @@ SRC = push_swap.c\
 	verification.c
 OBJ = $(SRC:.c=.o)
 
-$(NAME): $(OBJ)
+ifneq (,$(findstring xterm,${TERM}))
+        GREEN        := $(shell tput -Txterm setaf 2)
+        YELLOW       := $(shell tput -Txterm setaf 3)
+        PURPLE       := $(shell tput -Txterm setaf 5)
+        BLUE         := $(shell tput -Txterm setaf 6)
+        RESET := $(shell tput -Txterm sgr0)
+else
+        GREEN        := ""
+        YELLOW       := ""
+        PURPLE       := ""
+        BLUE         := ""
+        RESET        := ""
+endif
+
+TITLE = "\n $(BLUE)██████  ██    ██ ███████ ██   ██         ███████ ██     ██  █████  ██████ \n"\
+                "$(BLUE)██   ██ ██    ██ ██      ██   ██         ██      ██     ██ ██   ██ ██   ██\n"\
+                "$(BLUE)██████  ██    ██ ███████ ███████         ███████ ██  █  ██ ███████ ██████ \n"\
+                "$(BLUE)██      ██    ██      ██ ██   ██              ██ ██ ███ ██ ██   ██ ██     \n"\
+                "$(BLUE)██       ██████  ███████ ██   ██ ███████ ███████  ███ ███  ██   ██ ██     \n"\
+        "\n\n $(PURPLE)ᐅ $(YELLOW)Making something like $(GREEN)$(NAME) $(YELLOW)or a shitty thing $(RED)(╯°□°)╯︵ ┻━┻ $(RESET)\n\n"
+
+.SILENT:
+
+$(NAME): title $(OBJ)
 	$(CC) $(OBJ) -o $(NAME) -fsanitize=address -g3
 
 all: $(NAME)
@@ -40,7 +63,14 @@ all: $(NAME)
 
 fclean: clean
 	rm -f $(NAME)
+
 clean:
 	rm -f $(OBJ)
 
 re : fclean all
+
+title: clear
+	echo $(TITLE)
+
+clear:
+	clear
