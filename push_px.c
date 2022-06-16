@@ -6,7 +6,7 @@
 /*   By: ccambium <ccambium@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 14:17:35 by ccambium          #+#    #+#             */
-/*   Updated: 2022/06/06 10:57:48 by ccambium         ###   ########.fr       */
+/*   Updated: 2022/06/16 08:30:51 by ccambium         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void	push_px(t_stack *stack_dst, t_stack *stack_src)
 		return ;
 	ntab_dst = malloc(sizeof(int) * (stack_dst->size + 2));
 	ntab_src = malloc(sizeof(int) * (stack_src->size));
-	if (ntab_src == NULL || ntab_src == NULL)
+	if (ntab_src == NULL || ntab_dst == NULL)
 		return ;
 	ntab_dst[0] = stack_src->tab[0];
 	i = -1;
